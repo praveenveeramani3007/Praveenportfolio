@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRAVEEN V</title>
     <meta name="description" content="Get in touch with Alex Rivera for 3D design projects and collaborations">
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        
+
         <div class="nav-container">
             <a href="index.html" class="nav-logo">PRAVEEN V </a>
             <div class="nav-logo">
@@ -55,62 +57,137 @@
         </div>
     </nav>
     <section id="contact" class="contact" style="padding-top: 120px;">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's build your next web experience</p>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's build your next web experience</p>
+            </div>
+            <section class="contact-form">
+                <h2>Contact Me</h2>
+                <!-- Removed action="save_contact.php" to prevent 405 Error -->
+                <form id="contactForm" onsubmit="return false;">
+                    <div id="error-msg"></div> <!-- Validation feedback here -->
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                    <label for="phone">Mobile Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your mobile number" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message..."
+                        required></textarea>
+
+
+                    <div class="form-actions">
+                        <button type="button" id="smsBtn">Send Message (SMS)</button>
+                        <button type="button" id="whatsappBtn">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+                    </div>
+                </form>
+
+                <script>
+                    const myPhoneNumber = "916374416934"; // Your number
+                    const errorMsg = document.getElementById('error-msg');
+
+                    function showError(msg) {
+                        errorMsg.textContent = msg;
+                        errorMsg.style.display = 'block';
+                        setTimeout(() => {
+                            errorMsg.textContent = '';
+                        }, 5000);
+                    }
+
+                    function getFormData() {
+                        const name = document.getElementById('name').value;
+                        const email = document.getElementById('email').value;
+                        const phone = document.getElementById('phone').value;
+                        const message = document.getElementById('message').value;
+
+                        if (!name) {
+                            showError('Please enter your name.');
+                            return null;
+                        }
+                        if (!email) {
+                            showError('Please enter your email.');
+                            return null;
+                        }
+                        if (!phone) {
+                            showError('Please enter your phone number.');
+                            return null;
+                        }
+                        if (!message) {
+                            showError('Please enter a message.');
+                            return null;
+                        }
+
+                        return { name, email, phone, message };
+                    }
+
+                    // Handle WhatsApp
+                    document.getElementById('whatsappBtn').addEventListener('click', function () {
+                        const data = getFormData();
+                        if (!data) return;
+
+                        const text = `Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AMessage: ${data.message}`;
+                        const url = `https://wa.me/${myPhoneNumber}?text=${text}`;
+                        window.open(url, '_blank');
+                    });
+
+                    // Handle SMS
+                    document.getElementById('smsBtn').addEventListener('click', function () {
+                        const data = getFormData();
+                        if (!data) return;
+
+                        // iOS uses '&' for body, Android uses '?' usually, but '?' works for most as query param starter.
+                        // For broader compatibility we use explicit checks or standard body param.
+                        // Standard: sms:+123?body=...
+
+                        const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nMessage: ${data.message}`;
+                        const encodedBody = encodeURIComponent(body);
+
+                        window.location.href = `sms:+${myPhoneNumber}?body=${encodedBody}`;
+                    });
+                </script>
+            </section>
+            <!-- Contact Section -->
+
+
         </div>
-<section class="contact-form">
-    <h2>Contact Me</h2>
-    <form action="save_contact.php" method="POST" enctype="multipart/form-data">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Your email" required>
-
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
-
-      <label for="resume">Upload Resume (PDF/DOCX):</label>
-      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
-
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-    <!-- Contact Section -->
-
-        
-    </div>
-</section>
+    </section>
 
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="social-links">
-    <a href="https://www.linkedin.com/praveen-veeramani-902770329" class="social-link" target="_blank">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    <a href="https://github.com/praveenveeramani3007" class="social-link" target="_blank">
-        <i class="fab fa-github"></i>
-    </a>
-    <a href="https://www.instagram.com/praveen_official397" class="social-link" target="_blank">
-        <i class="fab fa-instagram"></i>
-    </a>
-     <a href="mailto:praveenveeramani3007@gmail.com" class="social-link" target="_blank" title="Gmail">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-</div>
+                <a href="https://www.linkedin.com/praveen-veeramani-902770329" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/praveenveeramani3007" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/praveen_official397" class="social-link" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:praveenveeramani3007@gmail.com" class="social-link" target="_blank" title="Gmail">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
 
- 
+
         </div>
-         <div class="footer-bottom">
-    <p>© 2025 Praveen V | All Rights Reserved.</p>
-  </div>
+        <div class="footer-bottom">
+            <p>© 2025 Praveen V | All Rights Reserved.</p>
+        </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
+
 </html>

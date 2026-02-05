@@ -557,25 +557,53 @@ hamburger.addEventListener('click', () => {
 // ========================================
 
 // Initialize Project Modal
+// Initialize Project Cards (Direct Navigation)
 document.addEventListener('DOMContentLoaded', () => {
   const projectCards = document.querySelectorAll('.portfolio-card[data-repo]');
-  const modal = document.getElementById('projectModal');
-  const modalClose = document.querySelector('.modal-close');
-  const modalOverlay = document.querySelector('.modal-overlay');
 
-  if (!modal || projectCards.length === 0) return;
+  if (projectCards.length === 0) return;
 
-  // Open modal when clicking on a project card
-  projectCards.forEach(card => {
-    card.addEventListener('click', async (e) => {
-      // Don't open modal if clicking on a link
+  // Pre-fetch URLs for smoother navigation
+  projectCards.forEach(async (card) => {
+    const repoFullName = card.dataset.repo;
+    if (repoFullName) {
+      try {
+        const [owner, repo] = repoFullName.split('/');
+        const repoData = await fetchGitHubRepo(owner, repo);
+        
+        // Store URLs in dataset
+        if (repoData.homepage) {
+          card.dataset.url = repoData.homepage;
+        }
+        card.dataset.github = repoData.html_url;
+        
+      } catch (error) {
+        console.error('Failed to pre-fetch repo data for', repoFullName, error);
+        // Fallback to constructing GitHub URL manually if fetch fails
+        card.dataset.github = `https://github.com/${repoFullName}`;
+      }
+    }
+
+    // Add click event listener
+    card.addEventListener('click', (e) => {
+      // Don't trigger if clicking on a link inside the card
       if (e.target.tagName === 'A' || e.target.closest('a')) {
         return;
       }
 
-      const repoFullName = card.dataset.repo;
-      if (repoFullName) {
-        openProjectModal(repoFullName);
+      e.preventDefault();
+      
+      const hostedUrl = card.dataset.url;
+      const githubUrl = card.dataset.github;
+
+      if (hostedUrl) {
+        window.open(hostedUrl, '_blank');
+      } else if (githubUrl) {
+        window.open(githubUrl, '_blank');
+      } else {
+        // Fallback if data hasn't loaded yet
+        const repoFullName = card.dataset.repo;
+        window.open(`https://github.com/${repoFullName}`, '_blank');
       }
     });
 
@@ -583,28 +611,9 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const repoFullName = card.dataset.repo;
-        if (repoFullName) {
-          openProjectModal(repoFullName);
-        }
+        card.click();
       }
     });
-  });
-
-  // Close modal handlers
-  if (modalClose) {
-    modalClose.addEventListener('click', closeProjectModal);
-  }
-
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', closeProjectModal);
-  }
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      closeProjectModal();
-    }
   });
 });
 

@@ -11,21 +11,30 @@ if ($conn->connect_error) {
 
 $name = $_POST['name'];
 $email = $_POST['email'];
-$message = $_POST['message'];
+$phone = $_POST['phone'];
+$raw_message = $_POST['message'];
 
-$targetDir = "uploads/";
-if (!is_dir($targetDir)) {
-  mkdir($targetDir, 0777, true);
-}
+// Append phone to message for storage and email
+$message = $raw_message . "\n\nMobile Number: " . $phone;
 
-$fileName = basename($_FILES["resume"]["name"]);
-$targetFilePath = $targetDir . time() . "_" . $fileName;
+  // No file upload needed anymore
+  // $targetDir = "uploads/"; ... 
 
-if (move_uploaded_file($_FILES["resume"]["tmp_name"], $targetFilePath)) {
-  $sql = "INSERT INTO contacts (name, email, message, resume_path)
-          VALUES ('$name', '$email', '$message', '$targetFilePath')";
+  $sql = "INSERT INTO contacts (name, email, message)
+          VALUES ('$name', '$email', '$message')";
 
   if ($conn->query($sql) === TRUE) {
+    // Send Email Notification
+    $to = "praveenveeramani3007@gmail.com"; 
+    $subject = "New Contact Form Submission from " . $name;
+    // Removed Resume from body
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage:\n$raw_message"; 
+    $headers = "From: no-reply@yourdomain.com"; 
+
+    if(mail($to, $subject, $body, $headers)) {
+        // Email sent
+    }
+
     echo "
       <script>
         alert('Your message has been sent successfully!');
@@ -40,14 +49,8 @@ if (move_uploaded_file($_FILES["resume"]["tmp_name"], $targetFilePath)) {
       </script>
     ";
   }
-} else {
-  echo "
-    <script>
-      alert('Error uploading your resume. Please try again.');
-      window.history.back();
-    </script>
-  ";
-}
+} 
+// Removed else block for upload failure
 
 $conn->close();
 ?>
