@@ -4,51 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PRAVEEN V</title>
-  <meta name="description" content="Learn more about Alex Rivera, a passionate 3D designer and digital artist">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
+  <title>About Me | Praveen V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
+<body class="subpage">
+  <canvas id="bg-canvas"></canvas>
+  <div class="main-overlay"></div>
 
+  <!-- Navigation -->
+  <nav class="navbar modern-nav">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">PRAVEEN V </a>
-      <div class="nav-logo">
-        <span class="logo-text"></span>
-      </div>
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-code brand-icon"></i>
+        <span>PRAVEEN</span>
+      </a>
+
       <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link active">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="portfolio.html" class="nav-link">project</a>
-        </li>
-        <li class="nav-item">
-          <a href="skills.html" class="nav-link">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link ">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a href="resume.html" class="nav-link">Resume</a>
-        </li>
-        <li class="nav-item">
-          <a href="education.html" class="nav-link">Education</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+        <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item action-item"><a href="contact.html" class="nav-btn">Hire Me</a></li>
       </ul>
+
       <div class="hamburger" id="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -57,15 +42,14 @@
     </div>
   </nav>
 
-  <section id="about" class="about" style="padding-top: 120px;">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle"></p>
-      </div>
+  <div class="page-container">
+    <div class="page-header">
+      <h1 class="page-title">About Me</h1>
+      <p class="page-subtitle">Passionate Developer. Problem Solver. Tech Enthusiast.</p>
+    </div>
 
-      <div class="about-content horizontal-layout">
-        <!-- ✅ Text on left -->
+    <div class="glass-card">
+      <div class="about-grid">
         <div class="about-text">
           <p>
             Hi, I'm <strong>Praveen V</strong>, a passionate Web developer with a solid academic foundation and a drive
@@ -90,33 +74,42 @@
 
           <div class="about-stats">
             <div class="stat-item">
-              <span class="stat-number">4+</span>
-              <span class="stat-label">Projects Completed</span>
+              <h3>4+</h3>
+              <p>Projects</p>
             </div>
             <div class="stat-item">
-              <span class="stat-number">100%</span>
-              <span class="stat-label">Passion Driven</span>
+              <h3>100%</h3>
+              <p>Dedication</p>
             </div>
           </div>
         </div>
 
-        <!-- ✅ Image on right -->
-        <div class="about-image">
-          <img src="my_img.jpg.jpeg" alt="Praveen V - Web Stack Developer" class="about-img circle-img">
+        <div class="about-image-wrapper" style="display: flex; justify-content: center;">
+          <div class="profile-card-3d" style="width: 300px; height: 380px;">
+            <div class="profile-image-container">
+              <img src="my_img.jpg.jpeg" alt="Praveen V" class="profile-img"
+                onerror="this.src='https://via.placeholder.com/400x400/1a1a1a/cccccc?text=Praveen'">
+            </div>
+            <div class="profile-glow"></div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-
-
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>© 2025 Praveen | All Rights Reserved.</p>
+  <footer class="footer-minimal">
+    <div class="footer-socials">
+      <a href="https://github.com/praveenveeramani3007" target="_blank" class="footer-social-link"><i
+          class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank" class="footer-social-link"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/praveen_official397/" target="_blank" class="footer-social-link"><i
+          class="fab fa-instagram"></i></a>
+      <a href="mailto:praveenveeramani3007@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
     </div>
+    <p>© 2025 Praveen V. Built with <i class="fas fa-heart" style="color: #e50914;"></i> and Code.</p>
   </footer>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 

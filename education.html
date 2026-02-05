@@ -2,48 +2,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Education | Alex Rivera</title>
-
-  <!-- Global Styles -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | Praveen V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body>
+<body class="subpage">
+  <canvas id="bg-canvas"></canvas>
+  <div class="main-overlay"></div>
 
   <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-
+  <nav class="navbar modern-nav">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">Praveen V </a>
-      <div class="nav-logo">
-        <span class="logo-text"></span>
-      </div>
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-code brand-icon"></i>
+        <span>PRAVEEN</span>
+      </a>
+
       <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="portfolio.html" class="nav-link">project</a>
-        </li>
-        <li class="nav-item">
-          <a href="skills.html" class="nav-link">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link ">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a href="resume.html" class="nav-link">Resume</a>
-        </li>
-        <li class="nav-item">
-          <a href="education.html" class="nav-link active">Education</a>
-        </li>
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="education.html" class="nav-link active">Education</a></li>
+        <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item action-item"><a href="contact.html" class="nav-btn">Hire Me</a></li>
       </ul>
+
       <div class="hamburger" id="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -52,44 +42,68 @@
     </div>
   </nav>
 
-  <!-- ✅ Education Section -->
-  <section id="education" class="education-section">
-    <h1 class="section-title">Education</h1>
+  <div class="page-container">
+    <div class="page-header">
+      <h1 class="page-title">Education</h1>
+      <p class="page-subtitle">My academic journey and qualifications.</p>
+    </div>
 
     <div class="timeline">
-      <ul>
-        <li>
-          <div class="content">
-            <h2>MCA</h2>
-            <h4>Sathyabama University, Chennai</h4>
-            <p>CGPA - 8.43</p>
-            <small><i class="fas fa-calendar"></i> Present</small>
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            <h2>BCA</h2>
-            <h4>Karan Arts and Science Collage,Thiruvalluvar University, Tiruvannamalai</h4>
-            <p>CGPA - 7.9</p>
-            <small><i class="fas fa-calendar"></i> May-2024</small>
-          </div>
-        </li>
-        <li>
-          <div class="content">
-            <h2>XII Grade</h2>
-            <h4>Government Higher Secondary school, Thachambattu</h4>
-            <p>CGPA - 8.5</p>
-            <small><i class="fas fa-calendar"></i> May 2021</small>
-          </div>
-        </li>
-      </ul>
+      <!-- MCA -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Present</div>
+        <div class="glass-card">
+          <h3 class="timeline-title">Master of Computer Applications (MCA)</h3>
+          <h4 class="timeline-subtitle">Sathyabama University, Chennai</h4>
+          <p class="timeline-desc">
+            Pursuing advanced studies in computer science. Current CGPA: <strong>8.43</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- BCA -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May 2024</div>
+        <div class="glass-card">
+          <h3 class="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+          <h4 class="timeline-subtitle">Karan Arts and Science Collage, Thiruvalluvar University</h4>
+          <p class="timeline-desc">
+            Completed undergraduate studies with a strong foundation in programming. CGPA: <strong>7.9</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- XII -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May 2021</div>
+        <div class="glass-card">
+          <h3 class="timeline-title">Higher Secondary (XII Grade)</h3>
+          <h4 class="timeline-subtitle">Government Higher Secondary School, Thachambattu</h4>
+          <p class="timeline-desc">
+            Specialized in Computer Science stream. Score: <strong>85%</strong>
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
-  <footer class="footer">
-    <div class="footer-bottom">
-      <p>© 2025 Praveen V| All Rights Reserved.</p>
+  </div>
+
+  <footer class="footer-minimal">
+    <div class="footer-socials">
+      <a href="https://github.com/praveenveeramani3007" target="_blank" class="footer-social-link"><i
+          class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank" class="footer-social-link"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/praveen_official397/" target="_blank" class="footer-social-link"><i
+          class="fab fa-instagram"></i></a>
+      <a href="mailto:praveenveeramani3007@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
     </div>
+    <p>© 2025 Praveen V. Built with <i class="fas fa-heart" style="color: #e50914;"></i> and Code.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

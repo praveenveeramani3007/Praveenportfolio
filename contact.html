@@ -4,51 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRAVEEN V</title>
-    <meta name="description" content="Get in touch with Alex Rivera for 3D design projects and collaborations">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    <title>Contact | Praveen V</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+<body class="subpage">
+    <canvas id="bg-canvas"></canvas>
+    <div class="main-overlay"></div>
 
+    <!-- Navigation -->
+    <nav class="navbar modern-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">PRAVEEN V </a>
-            <div class="nav-logo">
-                <span class="logo-text"></span>
-            </div>
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-code brand-icon"></i>
+                <span>PRAVEEN</span>
+            </a>
+
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">project</a>
-                </li>
-                <li class="nav-item">
-                    <a href="skills.html" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link active">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="resume.html" class="nav-link">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a href="education.html" class="nav-link">Education</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li class="nav-item action-item"><a href="contact.html" class="nav-btn">Hire Me</a></li>
             </ul>
+
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -56,137 +41,78 @@
             </div>
         </div>
     </nav>
-    <section id="contact" class="contact" style="padding-top: 120px;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's build your next web experience</p>
-            </div>
-            <section class="contact-form">
-                <h2>Contact Me</h2>
-                <!-- Removed action="save_contact.php" to prevent 405 Error -->
-                <form id="contactForm" onsubmit="return false;">
-                    <div id="error-msg"></div> <!-- Validation feedback here -->
 
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Your full name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Your email" required>
-
-                    <label for="phone">Mobile Number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Your mobile number" required>
-
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message..."
-                        required></textarea>
-
-
-                    <div class="form-actions">
-                        <button type="button" id="smsBtn">Send Message (SMS)</button>
-                        <button type="button" id="whatsappBtn">
-                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
-                        </button>
-                    </div>
-                </form>
-
-                <script>
-                    const myPhoneNumber = "916374416934"; // Your number
-                    const errorMsg = document.getElementById('error-msg');
-
-                    function showError(msg) {
-                        errorMsg.textContent = msg;
-                        errorMsg.style.display = 'block';
-                        setTimeout(() => {
-                            errorMsg.textContent = '';
-                        }, 5000);
-                    }
-
-                    function getFormData() {
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('email').value;
-                        const phone = document.getElementById('phone').value;
-                        const message = document.getElementById('message').value;
-
-                        if (!name) {
-                            showError('Please enter your name.');
-                            return null;
-                        }
-                        if (!email) {
-                            showError('Please enter your email.');
-                            return null;
-                        }
-                        if (!phone) {
-                            showError('Please enter your phone number.');
-                            return null;
-                        }
-                        if (!message) {
-                            showError('Please enter a message.');
-                            return null;
-                        }
-
-                        return { name, email, phone, message };
-                    }
-
-                    // Handle WhatsApp
-                    document.getElementById('whatsappBtn').addEventListener('click', function () {
-                        const data = getFormData();
-                        if (!data) return;
-
-                        const text = `Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AMessage: ${data.message}`;
-                        const url = `https://wa.me/${myPhoneNumber}?text=${text}`;
-                        window.open(url, '_blank');
-                    });
-
-                    // Handle SMS
-                    document.getElementById('smsBtn').addEventListener('click', function () {
-                        const data = getFormData();
-                        if (!data) return;
-
-                        // iOS uses '&' for body, Android uses '?' usually, but '?' works for most as query param starter.
-                        // For broader compatibility we use explicit checks or standard body param.
-                        // Standard: sms:+123?body=...
-
-                        const body = `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nMessage: ${data.message}`;
-                        const encodedBody = encodeURIComponent(body);
-
-                        window.location.href = `sms:+${myPhoneNumber}?body=${encodedBody}`;
-                    });
-                </script>
-            </section>
-            <!-- Contact Section -->
-
-
+    <div class="page-container">
+        <div class="page-header">
+            <h1 class="page-title">Get In Touch</h1>
+            <p class="page-subtitle">Have a project in mind or just want to say hi?</p>
         </div>
-    </section>
 
+        <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+            <form action="save_contact.php" method="POST">
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="name" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Full
+                        Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff;"
+                        placeholder="Enter your name">
+                </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/praveen-veeramani-902770329" class="social-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/praveenveeramani3007" class="social-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.instagram.com/praveen_official397" class="social-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="mailto:praveenveeramani3007@gmail.com" class="social-link" target="_blank" title="Gmail">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="email" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Email
+                        Address</label>
+                    <input type="email" id="email" name="email" class="form-input" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff;"
+                        placeholder="Enter your email">
+                </div>
 
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label for="phone" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Phone
+                        Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff;"
+                        placeholder="Enter your phone number">
+                </div>
 
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label for="message"
+                        style="display: block; margin-bottom: 8px; color: var(--text-muted);">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" required
+                        style="width: 100%; padding: 15px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); border-radius: 10px; color: #fff; min-height: 150px;"
+                        placeholder="Tell me about your project..."></textarea>
+                </div>
+
+                <div class="button-group" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <button type="submit" class="btn btn-primary"
+                        style="flex: 1; border: none; cursor: pointer; justify-content: center;">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                    </button>
+
+                    <button type="button" class="btn" onclick="sendToWhatsapp()"
+                        style="flex: 1; background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none; cursor: pointer; justify-content: center;">
+                        <span>Send via WhatsApp</span>
+                        <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Praveen V | All Rights Reserved.</p>
+    </div>
+
+    <footer class="footer-minimal">
+        <div class="footer-socials">
+            <a href="https://github.com/praveenveeramani3007" target="_blank" class="footer-social-link"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank"
+                class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/praveen_official397/" target="_blank" class="footer-social-link"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="mailto:praveenveeramani3007@gmail.com" class="footer-social-link"><i
+                    class="fas fa-envelope"></i></a>
         </div>
+        <p>© 2025 Praveen V. Built with <i class="fas fa-heart" style="color: #e50914;"></i> and Code.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 

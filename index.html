@@ -1,219 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praveen V</title>
-    <meta name="description" content="Interactive 3D Portfolio - Navigate through Projects, Achievements, and About">
-    
+    <title>Praveen V | Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Praveen V - Full Stack Developer specializing in modern web experiences.">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-    
 </head>
-<body class="homepage">
-    <!-- 3D Scene Container -->
-    <div class="scene-container">
-        <!-- Background 3D Elements -->
-        <div class="bg-3d-elements">
-            <div class="floating-sphere sphere-1"></div>
-            <div class="floating-sphere sphere-2"></div>
-            <div class="floating-sphere sphere-3"></div>
-            <div class="floating-cube cube-1"></div>
-            <div class="floating-cube cube-2"></div>
-            <div class="geometric-pattern pattern-1"></div>
-            <div class="geometric-pattern pattern-2"></div>
-        </div>
 
-        <!-- Navigation Cards Container -->
-        <div class="cards-container">
-           <h1 class="portfolio-title">
-    <span class="title-line">Praveen V</span>
-    <span class="title-subtitle typing-text" id="typed-subtitle"></span>
-</h1>
+<body class="home-modern">
 
-            
-            <div class="navigation-cards">
-                <!-- Projects Card -->
-                <div class="nav-card projects-card" data-page="portfolio">
-                    <div class="card-face card-front">
-                        <div class="card-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h3 class="card-title">Projects</h3>
-                        <p class="card-description">Explore my projects and creative works</p>
-                        <div class="card-glow"></div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="card-preview">
-                            <div class="preview-item"></div>
-                            <div class="preview-item"></div>
-                            <div class="preview-item"></div>
-                        </div>
-                        <span class="click-text">Click to Enter</span>
-                    </div>
-                </div>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
 
-                <!-- Achievements Card -->
-                <div class="nav-card achievements-card" data-page="skills">
-                    <div class="card-face card-front">
-                        <div class="card-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3 class="card-title">Skills</h3>
-                        <p class="card-description">Skills, experience and milestones</p>
-                        <div class="card-glow"></div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="achievement-bars">
-                            <div class="skill-bar"></div>
-                            <div class="skill-bar"></div>
-                            <div class="skill-bar"></div>
-                        </div>
-                        <span class="click-text">Click to Enter</span>
-                    </div>
-                </div>
+    <!-- Overlay Gradient -->
+    <div class="main-overlay"></div>
 
-                <!-- About Card -->
-                <div class="nav-card about-card" data-page="about">
-                    <div class="card-face card-front">
-                        <div class="card-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h3 class="card-title">About</h3>
-                        <p class="card-description">Learn more about my journey and passion</p>
-                        <div class="card-glow"></div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="profile-preview">
-                            <div class="avatar-placeholder"></div>
-                            <div class="info-lines">
-                                <div class="info-line"></div>
-                                <div class="info-line"></div>
-                            </div>
-                        </div>
-                        <span class="click-text">Click to Enter</span>
-                    </div>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar modern-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-code brand-icon"></i>
+                <span>PRAVEEN</span>
+            </a>
 
-                <!-- Contact Card -->
-                <div class="nav-card contact-card" data-page="contact">
-                    <div class="card-face card-front">
-                        <div class="card-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3 class="card-title">Connect</h3>
-                        <p class="card-description">Let's collaborate on your next project</p>
-                        <div class="card-glow"></div>
-                    </div>
-                    <div class="card-face card-back">
-                        <div class="contact-preview">
-                            <div class="contact-icon-small">
-                                <i class="fas fa-paper-plane"></i>
-                            </div>
-                            <div class="contact-lines">
-                                <div class="contact-line"></div>
-                                <div class="contact-line"></div>
-                            </div>
-                        </div>
-                        <span class="click-text">Click to Enter</span>
-                    </div>
-                </div>
-               <!-- Resume Card -->
-<div class="nav-card resume-card" data-page="resume">
-  <div class="card-face card-front">
-    <div class="card-icon">
-      <i class="fas fa-file-alt"></i>
-    </div>
-    <h3 class="card-title">Resume</h3>
-    <p class="card-description">View my professional experience and achievements</p>
-    <div class="card-glow"></div>
-  </div>
-  <div class="card-face card-back">
-    <div class="profile-preview">
-      <div class="avatar-placeholder"></div>
-      <div class="info-lines">
-        <div class="info-line"></div>
-        <div class="info-line"></div>
-      </div>
-    </div>
-    <span class="click-text">Click to View</span>
-  </div>
-</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="portfolio.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item action-item"><a href="contact.html" class="nav-btn">Hire Me</a></li>
+            </ul>
 
-<!-- Education Card -->
-<div class="nav-card education-card" data-page="education">
-  <div class="card-face card-front">
-    <div class="card-icon">
-      <i class="fas fa-graduation-cap"></i>
-    </div>
-    <h3 class="card-title">Education</h3>
-    <p class="card-description">Discover my academic background and qualifications</p>
-    <div class="card-glow"></div>
-  </div>
-  <div class="card-face card-back">
-    <div class="profile-preview">
-      <div class="avatar-placeholder"></div>
-      <div class="info-lines">
-        <div class="info-line"></div>
-        <div class="info-line"></div>
-      </div>
-    </div>
-    <span class="click-text">Click to Explore</span>
-  </div>
-</div>
-
-            </div>
-
-            <!-- Interactive Instructions -->
-            
-        </div>
-
-        
-
-            
-        </div>
-
-        <!-- Ambient Particles -->
-        <div class="particles-container">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-    </div>
-
-    <!-- Loading Screen -->
-    <div class="loading-screen">
-        <div class="loader-3d">
-            <div class="loader-cube">
-                <div class="face front"></div>
-                <div class="face back"></div>
-                <div class="face right"></div>
-                <div class="face left"></div>
-                <div class="face top"></div>
-                <div class="face bottom"></div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-        <p class="loading-text">Loading 3D Portfolio...</p>
-    </div>
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-bottom">
-    <p>© 2025 Praveen V | All Rights Reserved.</p>
-  </div>
-</footer>
+    </nav>
 
-    <!-- JavaScript -->
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Available for work
+            </div>
+
+            <h1 class="hero-title">
+                Hi, I'm <span class="text-highlight">Praveen</span>
+                <br>
+                <span class="typing-text-wrapper">
+                    <span id="typed-text"></span><span class="cursor">|</span>
+                </span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Crafting robust and scalable web applications with modern technologies.
+                Focused on creating exceptional digital experiences.
+            </p>
+
+            <div class="hero-actions">
+                <a href="portfolio.html" class="btn btn-primary">
+                    View Projects <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/praveenveeramani3007" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank"
+                    aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/praveen_official397/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="mailto:praveenveeramani3007@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="profile-card-3d">
+                <div class="profile-image-container">
+                    <!-- Placeholder or user image -->
+                    <img src="my_img.jpg.jpeg" alt="Praveen V" class="profile-img"
+                        onerror="this.src='https://via.placeholder.com/400x400/1a1a1a/cccccc?text=Praveen'">
+                </div>
+                <div class="profile-glow"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-minimal">
+        <div class="footer-socials">
+            <a href="https://github.com/praveenveeramani3007" target="_blank" class="footer-social-link"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank"
+                class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/praveen_official397/" target="_blank" class="footer-social-link"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="mailto:praveenveeramani3007@gmail.com" class="footer-social-link"><i
+                    class="fas fa-envelope"></i></a>
+        </div>
+        <p>© 2025 Praveen V. Built with <i class="fas fa-heart" style="color: #e50914;"></i> and Code.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>

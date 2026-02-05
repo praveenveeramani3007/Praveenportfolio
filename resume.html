@@ -1,86 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | Alex Rivera</title>
 
-  <!-- Global Styles -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Praveen V</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body>
+<body class="subpage">
+  <canvas id="bg-canvas"></canvas>
+  <div class="main-overlay"></div>
 
-   <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Praveen V </a>
-            <div class="nav-logo">
-                <span class="logo-text"></span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">project</a>
-                </li>
-                <li class="nav-item">
-                    <a href="skills.html" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link ">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="resume.html" class="nav-link active">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a href="education.html" class="nav-link">Education</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+  <!-- Navigation -->
+  <nav class="navbar modern-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <i class="fas fa-code brand-icon"></i>
+        <span>PRAVEEN</span>
+      </a>
 
-  <!-- ✅ Resume Section -->
-  <section id="resume" class="resume-section">
-    <h1 class="section-title">My Resume</h1>
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+        <li class="nav-item"><a href="portfolio.html" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+        <li class="nav-item"><a href="resume.html" class="nav-link active">Resume</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item action-item"><a href="contact.html" class="nav-btn">Hire Me</a></li>
+      </ul>
 
-    <div class="resume-container">
-      <p>Below you can view or download my latest resume:</p>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
 
-      <!-- 📄 Resume Viewer -->
-      <div class="resume-viewer">
-        <iframe 
-          src="assets/resume.pdf" 
-          width="100%" 
-          height="800px"
-          title="Alex Rivera Resume"
-          frameborder="0">
-        </iframe>
+  <div class="page-container">
+    <div class="page-header">
+      <h1 class="page-title">My Resume</h1>
+      <p class="page-subtitle">View my professional journey and qualifications.</p>
+    </div>
+
+    <div class="glass-card" style="padding: 20px;">
+      <div class="resume-viewer-container">
+        <iframe src="assets/resume.pdf" width="100%" height="100%" title="Praveen V Resume"
+          style="border: none;"></iframe>
       </div>
 
-      <!-- 📥 Download Button -->
-      <div class="resume-download">
-        <a href="" download class="btn">
+      <div class="resume-actions">
+        <a href="assets/resume.pdf" download class="btn btn-primary">
           <i class="fas fa-download"></i> Download Resume
         </a>
       </div>
     </div>
-  </section>
-<footer class="footer">
-  <div class="footer-bottom">
-    <p>© 2025 Praveen V | All Rights Reserved.</p>
   </div>
-</footer>
+
+  <footer class="footer-minimal">
+    <div class="footer-socials">
+      <a href="https://github.com/praveenveeramani3007" target="_blank" class="footer-social-link"><i
+          class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/praveenveeramani902770329/" target="_blank" class="footer-social-link"><i
+          class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/praveen_official397/" target="_blank" class="footer-social-link"><i
+          class="fab fa-instagram"></i></a>
+      <a href="mailto:praveenveeramani3007@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p>© 2025 Praveen V. Built with <i class="fas fa-heart" style="color: #e50914;"></i> and Code.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

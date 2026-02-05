@@ -49,7 +49,6 @@ $message = $raw_message . "\n\nMobile Number: " . $phone;
       </script>
     ";
   }
-} 
 // Removed else block for upload failure
 
 $conn->close();
