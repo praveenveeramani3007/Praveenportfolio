@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initProfileTilt();
 
     // 5. Initialize Mobile Menu (Simplified)
-    // Note: Re-using existing mobile nav logic would be good, but rewriting for cleaner code.
     initMobileMenu();
 });
 
@@ -265,34 +264,67 @@ function initMobileMenu() {
 
 
 // ========================================
-// WHATSAPP INTEGRATION
+// FORM HANDLING (AJAX)
 // ========================================
 
-function sendToWhatsapp() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    if (!name || !message) {
-        alert("Please enter at least your Name and Message to send via WhatsApp.");
-        return;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+
+            // Show loading state
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            // Add custom subject
+            formData.append("_subject", "New Submission from Portfolio!");
+            formData.append("_captcha", "false");
+
+            fetch("https://formsubmit.co/ajax/praveenveeramani3007@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    showNotification("The form was successfully submitted. He will contact within few hours", "success");
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification("Something went wrong. Please try again later.", "error");
+                })
+                .finally(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                });
+        });
     }
+});
 
-    // PHONE NUMBER - UPDATE THIS
-    const whatsappNumber = "+919876543210";
+function showNotification(text, type) {
+    // Check if notification already exists and remove it
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
 
-    // Construct the message
-    let whatsappMsg = `*New Contact Inquiry*\n\n`;
-    whatsappMsg += `*Name:* ${name}\n`;
-    whatsappMsg += `*Email:* ${email}\n`;
-    whatsappMsg += `*Phone:* ${phone}\n`;
-    whatsappMsg += `*Message:* ${message}`;
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    // Explicitly styled here to ensure visibility
+    notification.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${text}`;
 
-    // Encode for URL
-    const encodedMsg = encodeURIComponent(whatsappMsg);
+    document.body.appendChild(notification);
 
-    // Open WhatsApp
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMsg}`;
-    window.open(whatsappUrl, '_blank');
+    // Trigger animation
+    setTimeout(() => notification.classList.add('show'), 10);
+
+    // Remove after 5 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
 }

@@ -49,7 +49,9 @@
         </div>
 
         <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
-            <form action="save_contact.php" method="POST">
+            <form id="contactForm">
+                <!-- Form Configuration handled via AJAX in script.js -->
+
                 <div class="form-group" style="margin-bottom: 25px;">
                     <label for="name" style="display: block; margin-bottom: 8px; color: var(--text-muted);">Full
                         Name</label>
@@ -87,12 +89,6 @@
                         style="flex: 1; border: none; cursor: pointer; justify-content: center;">
                         <span>Send Message</span>
                         <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
-                    </button>
-
-                    <button type="button" class="btn" onclick="sendToWhatsapp()"
-                        style="flex: 1; background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none; cursor: pointer; justify-content: center;">
-                        <span>Send via WhatsApp</span>
-                        <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
                     </button>
                 </div>
             </form>

@@ -709,3 +709,48 @@ body {
     left: 2px;
   }
 }
+
+/* Notification Toast */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.notification.success {
+  border-left: 4px solid #4caf50;
+}
+
+.notification.error {
+  border-left: 4px solid #f44336;
+}
+
+.notification i {
+  font-size: 1.2rem;
+}
+
+.notification.success i {
+  color: #4caf50;
+}
+
+.notification.error i {
+  color: #f44336;
+}
