@@ -20,6 +20,8 @@ function App() {
           <Route path="education" element={<Education />} />
           <Route path="resume" element={<Resume />} />
           <Route path="contact" element={<Contact />} />
+          {/* Redirect any unknown paths (like /index.html) to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>
