@@ -11,7 +11,7 @@ const Resume = () => {
             <div className="glass-card" style={{ padding: '20px' }}>
                 <div className="resume-viewer-container">
                     <iframe
-                        src="assets/resume.pdf"
+                        src={`${import.meta.env.BASE_URL}resume.pdf`}
                         width="100%"
                         height="100%"
                         title="Praveen V Resume"
@@ -20,7 +20,7 @@ const Resume = () => {
                 </div>
 
                 <div className="resume-actions">
-                    <a href="assets/resume.pdf" download className="btn btn-primary">
+                    <a href={`${import.meta.env.BASE_URL}resume.pdf`} download className="btn btn-primary">
                         <i className="fas fa-download"></i> Download Resume
                     </a>
                 </div>

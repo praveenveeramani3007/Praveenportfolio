@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import myImg from '../assets/my_img.jpg.jpeg';
 
 const Home = () => {
     // Typing Effect Logic
@@ -128,12 +129,11 @@ const Home = () => {
                 <div className="profile-card-3d" ref={cardRef}>
                     <div className="profile-image-container">
                         <img
-                            src="my_img.jpg.jpeg"
+                            src={myImg}
                             alt="Praveen V"
                             className="profile-img"
                             onError={(e) => {
-                                e.target.onerror = null;
-                                e.target.src = 'https://via.placeholder.com/400x400/1a1a1a/cccccc?text=Praveen'
+                                e.target.style.display = 'none';
                             }}
                         />
                     </div>

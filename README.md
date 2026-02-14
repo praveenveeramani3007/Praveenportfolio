@@ -1,43 +1,29 @@
-# Portfolio - React Migration
+# Portfolio Project
 
-This project has been migrated from a static HTML/CSS/JS site to a modern **React** application using **Vite**.
+This is a modern React portfolio built with Vite.
 
-## Project Structure
+## 🚀 How to Run Locally
 
-- `src/`: contains the React source code.
-  - `components/`: Reusable components like `Layout.jsx` (Navbar, Footer, Background).
-  - `pages/`: Page components corresponding to the original HTML files (`Home`, `About`, `Skills`, `Projects`, `Education`, `Resume`, `Contact`).
-  - `index.css`: Global styles ported from `styles.css`.
-  - `App.jsx`: Routing configuration.
-  - `main.jsx`: Application entry point.
-- `public/`: Static assets (images, PDFs).
-- `legacy_backup/`: Contains the original static files for reference.
+This project uses **Vite** and **React**, which means it **cannot** be run by simply opening `index.html` or using the "Live Server" extension in VS Code.
 
-## Getting Started
+Instead, follow these steps:
 
-1.  **Install Dependencies**:
-    Open the terminal in this directory and run:
+1.  **Open Terminal**: View -> Terminal in VS Code.
+2.  **Install Dependencies** (if not done):
     ```bash
     npm install
     ```
-
-    *If you encounter permission errors, try deleting `node_modules` and running `npm install` again, or run the command prompt as Administrator.*
-
-2.  **Run Development Server**:
-    Start the local development server:
+3.  **Start Development Server**:
     ```bash
     npm run dev
     ```
-    Open your browser to the URL shown (usually `http://localhost:5173`).
+4.  **Open in Browser**:
+    -   Click the link shown in the terminal (usually `http://localhost:5173/`).
 
-3.  **Build for Production**:
-    To create a production build:
-    ```bash
-    npm run build
-    ```
-    The output will be in the `dist/` folder.
+## 🛠️ Why is "Live Server" Blank?
+Standard "Live Server" only serves static HTML/CSS/JS files. Since this project uses React (JSX) and modern imports, the browser cannot understand the code until Vite processes it. `npm run dev` starts the Vite server which handles this processing for you.
 
-## Troubleshooting
-
-- **Vite not found**: Run `npm install` again to ensure all dependencies are installed.
-- **File permission errors**: Ensure no other process is using the files (e.g., close other terminals or editors) and try running commands with administrative privileges.
+## 📦 Deployment
+To deploy to GitHub Pages:
+1.  Run `npm run build`
+2.  Deploy the `dist` folder.

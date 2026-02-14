@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImg from '../assets/my_img.jpg.jpeg';
 
 const About = () => {
     return (
@@ -12,33 +13,53 @@ const About = () => {
                 <div className="about-grid">
                     <div className="about-text">
                         <p>
-                            Hello! I'm <span className="highlight">Praveen V</span>, a passionate <span className="highlight">Full Stack Developer</span> based in India.
-                            I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between.
+                            Hi, I'm <strong>Praveen V</strong>, a passionate Web developer with a solid academic foundation and a drive
+                            to create impactful web applications.
                         </p>
                         <p>
-                            My goal is to always build products that provide pixel-perfect, performant experiences.
-                            I started my coding journey with a curiosity about how websites work, which led me to dive deep into frontend and backend technologies.
+                            I completed my undergraduate degree at <strong>Thiruvalluvar University</strong>, where I discovered my
+                            enthusiasm for Web development and hands-on software projects.
                         </p>
                         <p>
                             My expertise spans both the frontend and backend — crafting responsive interfaces with HTML, CSS, and React,
-                            and building robust APIs with Node.js and Python. I’m a fast learner who thrives in fast-paced environments
-                            and loves solving complex problems with efficient code.
+                            and building efficient backends with Node.js, MongoDB, and MySQL.
                         </p>
                         <p>
-                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-                            or gaming.
+                            I’m actively seeking opportunities in <strong>web development</strong> and <strong>software
+                                engineering</strong> where I can apply my skills, learn, and contribute to meaningful products.
                         </p>
+                        <p>
+                            Currently, I’m pursuing my postgraduate studies at <strong>Sathyabama University</strong>, continuing to
+                            enhance my technical and problem-solving abilities.
+                        </p>
+
+                        <div className="about-stats">
+                            <div className="stat-item">
+                                <h3>4+</h3>
+                                <p>Projects</p>
+                            </div>
+                            <div className="stat-item">
+                                <h3>100%</h3>
+                                <p>Dedication</p>
+                            </div>
+                        </div>
                     </div>
-                    {/* Optional: Second image or visual element for About page */}
-                    <div className="about-img-container">
-                        <img
-                            src="im3.jpg"
-                            alt="Coding Setup"
-                            style={{ width: '100%', borderRadius: '15px', border: '1px solid rgba(255,255,255,0.1)' }}
-                            onError={(e) => {
-                                e.target.style.display = 'none'; // Hide if missing
-                            }}
-                        />
+
+                    <div className="about-image-wrapper" style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div className="profile-card-3d" style={{ width: '300px', height: '380px' }}>
+                            <div className="profile-image-container">
+                                <img
+                                    src={aboutImg}
+                                    alt="Praveen V"
+                                    className="profile-img"
+                                    onError={(e) => {
+                                        // Fallback if image fails
+                                        e.target.style.display = 'none';
+                                    }}
+                                />
+                            </div>
+                            <div className="profile-glow"></div>
+                        </div>
                     </div>
                 </div>
             </div>

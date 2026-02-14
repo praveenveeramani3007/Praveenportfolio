@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import portfolioImg from '../assets/portfolio_section.png';
+
 const Projects = () => {
     const [repos, setRepos] = useState([]);
 
@@ -9,32 +11,36 @@ const Projects = () => {
 
     const projects = [
         {
-            title: "Movie Recommendation System",
-            description: "A machine learning based recommendation system that suggests movies based on user preferences and viewing history.",
-            tags: ["Python", "Machine Learning", "Streamlit"],
-            image: "m1.jpg",
-            link: "https://github.com/praveenveeramani3007/Movie-Recommantaion-System-Using-Machine-Learning"
+            title: "Multimodel Deepfake Detection",
+            description: "Advanced deepfake detection using multi-modal analysis (Audio/Video) to ensure authentic media verification.",
+            tags: ["Python", "Deep Learning", "ML"],
+            // Dark theme, Cyberpunk text
+            image: "https://placehold.co/600x400/1a1a1a/00ffff?text=Deepfake+Detection&font=roboto",
+            link: "https://github.com/praveenveeramani3007/multimodeldeepfakedetection"
         },
         {
-            title: "Forensic Analysis Tool",
-            description: "A digital forensic tool designed to analyze file metadata and recover deleted artifacts from disk images.",
-            tags: ["Python", "Forensics", "Security"],
-            image: "portfolio_section.png",
-            link: "https://github.com/praveenveeramani3007/Forensic-Analysis-"
+            title: "Privacy Protection Cloud",
+            description: "Secure cloud storage solution with advanced encryption, privacy protection, and content regulation.",
+            tags: ["PHP", "MySQL", "Encryption"],
+            // Use existing asset
+            image: portfolioImg,
+            link: "https://github.com/praveenveeramani3007/prrojectp1"
         },
         {
-            title: "Image Forgery Detection",
-            description: "An AI-powered application to detect image manipulation and splicing using deep learning techniques.",
-            tags: ["Deep Learning", "Python", "Computer Vision"],
-            image: "im3.jpg",
-            link: "#" // No link provided in original
+            title: "Stock Predictor Pro",
+            description: "Machine Learning powered application for predicting stock market trends with high precision analytics. Includes Flask backend and React frontend.",
+            tags: ["Python", "Flask", "React", "Scikit-learn"],
+            // Green (Finance) theme
+            image: "https://placehold.co/600x400/0f2e16/4caf50?text=Stock+Predictor&font=roboto",
+            link: "https://github.com/praveenveeramani3007/StockMarketPredictorPro"
         },
         {
-            title: "Portfolio Website",
-            description: "My personal portfolio website built with HTML, CSS, JavaScript, and now React!",
-            tags: ["React", "HTML5", "CSS3"],
-            image: "my_img.jpg.jpeg",
-            link: "https://github.com/praveenveeramani3007/"
+            title: "Personal Portfolio",
+            description: "A modern, responsive portfolio website featuring 3D animations and a sleek dark theme.",
+            tags: ["React", "Vite", "CSS3"],
+            // Purple/Pink (Creative) theme
+            image: "https://placehold.co/600x400/1e1e2e/bd93f9?text=Personal+Portfolio&font=roboto",
+            link: "https://github.com/praveenveeramani3007/Praveenportfolio"
         }
     ];
 

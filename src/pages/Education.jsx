@@ -9,38 +9,41 @@ const Education = () => {
             </div>
 
             <div className="timeline">
-                {/* Item 1 */}
+                {/* MCA */}
                 <div className="timeline-item">
-                    <div className="timeline-content">
-                        <span className="year-badge">2021 - 2025</span>
-                        <h3 className="timeline-title">Bachelor of Engineering (CSE)</h3>
-                        <p className="timeline-subtitle">Anna University (Dhanalakshmi Srinivasan Engineering College)</p>
-                        <p className="text-muted">
-                            Focused on core computer science subjects including Data Structures, Algorithms, Database Management, and Web Technology.
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-date">Present</div>
+                    <div className="glass-card">
+                        <h3 className="timeline-title">Master of Computer Applications (MCA)</h3>
+                        <h4 className="timeline-subtitle">Sathyabama University, Chennai</h4>
+                        <p className="timeline-desc">
+                            Pursuing advanced studies in computer science. Current CGPA: <strong>8.43</strong>
                         </p>
                     </div>
                 </div>
 
-                {/* Item 2 */}
+                {/* BCA */}
                 <div className="timeline-item">
-                    <div className="timeline-content">
-                        <span className="year-badge">2020 - 2021</span>
-                        <h3 className="timeline-title">Higher Secondary (HSC)</h3>
-                        <p className="timeline-subtitle">State Board</p>
-                        <p className="text-muted">
-                            Completed with valid academic credentials in Physics, Chemistry, and Mathematics group.
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-date">May 2024</div>
+                    <div className="glass-card">
+                        <h3 className="timeline-title">Bachelor of Computer Applications (BCA)</h3>
+                        <h4 className="timeline-subtitle">Karan Arts and Science Collage, Thiruvalluvar University</h4>
+                        <p className="timeline-desc">
+                            Completed undergraduate studies with a strong foundation in programming. CGPA: <strong>7.9</strong>
                         </p>
                     </div>
                 </div>
 
-                {/* Item 3 */}
+                {/* XII */}
                 <div className="timeline-item">
-                    <div className="timeline-content">
-                        <span className="year-badge">2018 - 2019</span>
-                        <h3 className="timeline-title">Secondary School (SSLC)</h3>
-                        <p className="timeline-subtitle">State Board</p>
-                        <p className="text-muted">
-                            Foundation education with a focus on science and mathematics.
+                    <div className="timeline-dot"></div>
+                    <div className="timeline-date">May 2021</div>
+                    <div className="glass-card">
+                        <h3 className="timeline-title">Higher Secondary (XII Grade)</h3>
+                        <h4 className="timeline-subtitle">Government Higher Secondary School, Thachambattu</h4>
+                        <p className="timeline-desc">
+                            Specialized in Computer Science stream. Score: <strong>85%</strong>
                         </p>
                     </div>
                 </div>

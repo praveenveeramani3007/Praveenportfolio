@@ -10,64 +10,64 @@ const Skills = () => {
 
             <div className="glass-card">
                 <div className="skills-grid">
-                    {/* HTML5 */}
-                    <div className="skill-card">
-                        <i className="fab fa-html5 skill-icon" style={{ color: '#e34c26' }}></i>
-                        <span className="skill-name">HTML5</span>
-                    </div>
-
-                    {/* CSS3 */}
-                    <div className="skill-card">
-                        <i className="fab fa-css3-alt skill-icon" style={{ color: '#264de4' }}></i>
-                        <span className="skill-name">CSS3</span>
-                    </div>
-
                     {/* JavaScript */}
-                    <div className="skill-card">
-                        <i className="fab fa-js skill-icon" style={{ color: '#f7df1e' }}></i>
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-js skill-icon"></i>
                         <span className="skill-name">JavaScript</span>
                     </div>
 
                     {/* React */}
-                    <div className="skill-card">
-                        <i className="fa-brands fa-react skill-icon" style={{ color: '#61dafb' }}></i>
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-react skill-icon"></i>
                         <span className="skill-name">React</span>
                     </div>
 
-                    {/* Node.js */}
-                    <div className="skill-card">
-                        <i className="fab fa-node skill-icon" style={{ color: '#68a063' }}></i>
-                        <span className="skill-name">Node.js</span>
+                    {/* MySQL */}
+                    <div className="glass-card skill-card">
+                        <i className="fa-solid fa-database skill-icon"></i>
+                        <span className="skill-name">MySQL</span>
+                    </div>
+
+                    {/* HTML5 */}
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-html5 skill-icon"></i>
+                        <span className="skill-name">HTML5</span>
+                    </div>
+
+                    {/* CSS3 */}
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-css3-alt skill-icon"></i>
+                        <span className="skill-name">CSS3</span>
                     </div>
 
                     {/* Python */}
-                    <div className="skill-card">
-                        <i className="fab fa-python skill-icon" style={{ color: '#3776ab' }}></i>
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-python skill-icon"></i>
                         <span className="skill-name">Python</span>
                     </div>
 
+                    {/* Angular */}
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-angular skill-icon"></i>
+                        <span className="skill-name">Angular</span>
+                    </div>
+
                     {/* Java */}
-                    <div className="skill-card">
-                        <i className="fab fa-java skill-icon" style={{ color: '#007396' }}></i>
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-java skill-icon"></i>
                         <span className="skill-name">Java</span>
                     </div>
 
                     {/* Git */}
-                    <div className="skill-card">
-                        <i className="fab fa-git-alt skill-icon" style={{ color: '#f05032' }}></i>
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-git-alt skill-icon"></i>
                         <span className="skill-name">Git</span>
                     </div>
 
-                    {/* MySQL */}
-                    <div className="skill-card">
-                        <i className="fas fa-database skill-icon" style={{ color: '#00758f' }}></i>
-                        <span className="skill-name">MySQL</span>
-                    </div>
-
-                    {/* Responsive Design */}
-                    <div className="skill-card">
-                        <i className="fas fa-mobile-alt skill-icon" style={{ color: '#ffffff' }}></i>
-                        <span className="skill-name">Responsive</span>
+                    {/* GitHub */}
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-github skill-icon"></i>
+                        <span className="skill-name">GitHub</span>
                     </div>
                 </div>
             </div>
