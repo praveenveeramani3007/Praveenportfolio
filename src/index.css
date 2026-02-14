@@ -974,6 +974,49 @@ textarea.form-control {
   color: #2ecc71;
 }
 
-.notification.error i {
-  color: #e74c3c;
+/* Small Mobile Devices (320px - 400px) */
+@media (max-width: 400px) {
+  .page-container {
+    padding: 80px 10px 40px;
+    /* Tighter padding */
+  }
+
+  .glass-card {
+    padding: 20px 15px;
+    /* Less padding in cards */
+  }
+
+  .page-title {
+    font-size: 2rem;
+    /* Smaller title */
+  }
+
+  .contact-icon-box {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    padding: 15px 0;
+    /* Remove side padding in form */
+  }
+
+  .contact-item {
+    gap: 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
