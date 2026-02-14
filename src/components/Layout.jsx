@@ -59,7 +59,7 @@ const Layout = () => {
                 this.vx = (Math.random() - 0.5) * 1.5;
                 this.vy = (Math.random() - 0.5) * 1.5;
                 this.size = Math.random() * 2 + 1;
-                this.color = '#e50914';
+                this.color = '#14B8A6';
             }
 
             update() {
@@ -118,7 +118,7 @@ const Layout = () => {
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(229, 9, 20, ${1 - distance / connectionDistance})`;
+                        ctx.strokeStyle = `rgba(20, 184, 166, ${1 - distance / connectionDistance})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
@@ -190,7 +190,7 @@ const Layout = () => {
                             top: window.innerWidth <= 900 ? '80px' : 'auto',
                             left: window.innerWidth <= 900 ? '0' : 'auto',
                             width: window.innerWidth <= 900 ? '100%' : 'auto',
-                            background: window.innerWidth <= 900 ? '#050505' : 'transparent',
+                            background: window.innerWidth <= 900 ? '#0A0E1A' : 'transparent',
                             padding: window.innerWidth <= 900 ? '20px' : '0'
                         }}
                     >
@@ -247,7 +247,7 @@ const Layout = () => {
                         <i className="fas fa-envelope"></i>
                     </a>
                 </div>
-                <p>© 2025 Praveen V. Built with <i className="fas fa-heart" style={{ color: '#e50914' }}></i> and Code.</p>
+                <p>© 2025 Praveen V. Built with <i className="fas fa-heart" style={{ color: '#14B8A6' }}></i> and Code.</p>
             </footer>
         </>
     );
