@@ -88,7 +88,7 @@ const Home = () => {
                 </div>
 
                 <h1 className="hero-title">
-                    Hi, I'm <span className="text-highlight">Praveen</span>
+                    Hi, I'm <span className="text-highlight">Praveen V</span>
                     <br />
                     <span className="typing-text-wrapper">
                         <span id="typed-text"></span><span className="cursor">|</span>
