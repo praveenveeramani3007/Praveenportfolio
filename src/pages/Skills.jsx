@@ -22,6 +22,11 @@ const Skills = () => {
                         <span className="skill-name">React</span>
                     </div>
 
+                    <div className="glass-card skill-card">
+                        <i className="fa-brands fa-node-js skill-icon"></i>
+                        <span className="skill-name">Node.js</span>
+                    </div>
+
                     {/* MySQL */}
                     <div className="glass-card skill-card">
                         <i className="fa-solid fa-database skill-icon"></i>

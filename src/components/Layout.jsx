@@ -4,7 +4,19 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 const Layout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [backendStatus, setBackendStatus] = useState('Checking API...');
     const location = useLocation();
+
+    // Check Backend Connection
+    useEffect(() => {
+        fetch('http://localhost:5000/api/test')
+            .then(res => {
+                if (!res.ok) throw new Error('Network response was not ok');
+                return res.json();
+            })
+            .then(data => setBackendStatus('Connected to Backend \u2713'))
+            .catch(err => setBackendStatus('Backend Disconnected \u2717'));
+    }, []);
 
     // Toggle Mobile Menu
     const toggleMenu = () => {
@@ -247,6 +259,9 @@ const Layout = () => {
                         <i className="fas fa-envelope"></i>
                     </a>
                 </div>
+                <p style={{ fontSize: '0.85rem', color: backendStatus.includes('Connected') ? '#10B981' : '#EF4444', marginBottom: '8px' }}>
+                    {backendStatus}
+                </p>
                 <p>© 2025 Praveen V. Built with <i className="fas fa-heart" style={{ color: '#14B8A6' }}></i> and Code.</p>
             </footer>
         </>
