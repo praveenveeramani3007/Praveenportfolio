@@ -16,7 +16,8 @@ const Projects = () => {
             tags: ["Python", "Deep Learning", "ML"],
             // Dark theme, Cyberpunk text
             image: "https://placehold.co/600x400/1a1a1a/00ffff?text=Deepfake+Detection&font=roboto",
-            link: "https://github.com/praveenveeramani3007/multimodeldeepfakedetection"
+            link: "https://github.com/praveenveeramani3007/multimodeldeepfakedetection",
+            liveLink: "https://praveenveeramani3007.github.io/MultimodelDeepfakeDetection2/"
         },
         {
             title: "Privacy Protection Cloud",
@@ -40,7 +41,8 @@ const Projects = () => {
             tags: ["React", "Vite", "CSS3"],
             // Purple/Pink (Creative) theme
             image: "https://placehold.co/600x400/1e1e2e/bd93f9?text=Personal+Portfolio&font=roboto",
-            link: "https://github.com/praveenveeramani3007/Praveenportfolio"
+            link: "https://github.com/praveenveeramani3007/Praveenportfolio",
+            liveLink: "https://praveenveeramani3007.github.io/Praveenportfolio/index.html#/"
         }
     ];
 
@@ -79,6 +81,11 @@ const Projects = () => {
                                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
                                     View Code <i className="fas fa-arrow-right"></i>
                                 </a>
+                                {project.liveLink && (
+                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="project-link" style={{ background: 'linear-gradient(135deg, #00c6ff, #0072ff)' }}>
+                                        Live Demo <i className="fas fa-external-link-alt"></i>
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
